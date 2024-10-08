@@ -37,7 +37,7 @@ def send_to_gemini(prompt):
 
 # Convert CSV back to Excel
 def csv_to_excel(csv_file_path, original_filename):
-    df = pd.read_csv(csv_file_path, encoding='utf-8', sep=';', error_bad_lines=False, warn_bad_lines=True)
+    df = pd.read_csv(csv_file_path, encoding='utf-8', sep=';', on_bad_lines='skip')
     excel_file_name = f"{os.path.splitext(original_filename)[0]}_processed.xlsx"
     excel_file_path = os.path.join(UPLOAD_FOLDER, excel_file_name)
     df.to_excel(excel_file_path, index=False)
