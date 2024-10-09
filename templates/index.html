@@ -206,8 +206,8 @@
     <div class="content">
     <h1>KI-Analyse von Excel-Tabellen</h1>
     <form action="/upload" method="POST" enctype="multipart/form-data" oninput="checkForm()" onsubmit="showProcessing()">
-        <label for="fileInput">Bitte laden Sie hier die Excel-Datei hoch:</label>
-        <input type="file" id="fileInput" name="file" accept=".xlsx" required>
+        <label for="fileInput">Bitte laden Sie hier die Excel-Datei (xlsx oder csv) hoch:</label>
+        <input type="file" id="fileInput" name="file" accept=".xlsx, .csv" required>
 
         <label for="textInput">Bitte geben Sie hier die Anweisungen zur Analyse und Bearbeitung der Excel-Tabelle ein:</label>
         <textarea id="textInput" name="text" rows="5" cols="50" required></textarea>
@@ -219,7 +219,7 @@
 
     {% if download_link %}
     <div id="downloadSection" style="display:none;">
-        <p id="downloadReady">KI-Analyse und -Bearbeitung abgeschlossen. Laden Sie hier die bearbeitete Excel-Tabelle herunter:</p>
+        <p id="downloadReady">KI-Analyse und -Bearbeitung abgeschlossen. Laden Sie hier die bearbeitete csv-Tabelle herunter:</p>
         <a href="{{ download_link }}" download>
             <button id="downloadButton">Ergebnis herunterladen</button>
         </a>
