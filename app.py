@@ -14,7 +14,7 @@ UPLOAD_FOLDER = 'uploads'
 def excel_to_csv(excel_file_path):
     df = pd.read_excel(excel_file_path)
     csv_file_path = os.path.join(UPLOAD_FOLDER, 'converted.csv')
-    df.to_csv(csv_file_path, index=False, sep=';', encoding='utf-8')
+    df.to_csv(csv_file_path, index=False, sep=';', encoding='utf-8-sig')
     return csv_file_path
 
 # Send the text prompt to the Gemini 1.5 API and get CSV response
