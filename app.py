@@ -69,7 +69,7 @@ def upload():
             csv_file_path = file_path
 
         # Read CSV content to append to text
-        with open(csv_file_path, mode='r', encoding='utf-8-sig') as f:
+        with open(csv_file_path, mode='r', errors='ignore', encoding='utf-8-sig') as f:
             csv_content = f.read()
 
         # Configuration: Instruction for the AI model to constrain output to csv-formatted data only
